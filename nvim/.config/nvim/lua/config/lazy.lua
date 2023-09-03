@@ -32,8 +32,9 @@ require("lazy").setup({
 		'ThePrimeagen/harpoon', -- File mark for quick navigation
 		dependencies = {'nvim-lua/plenary.nvim'} -- Required for harpoon
 	},
-	"mbbill/undotree",
-	"tpope/vim-fugitive",
+	"mbbill/undotree", -- Complete undo history, similar to git repo
+	"tpope/vim-fugitive", -- Nvim git integration
+	"junegunn/gv.vim", -- Visual git history
 	{
 		'VonHeikemen/lsp-zero.nvim', -- LSP
 		branch = 'v2.x',
