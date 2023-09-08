@@ -7,6 +7,7 @@ lsp.nvim_workspace()
 lsp.ensure_installed({
     "clangd",
     "pyright",
+	"lua_ls",
 })
 
 
