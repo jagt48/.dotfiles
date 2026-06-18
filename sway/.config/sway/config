@@ -32,15 +32,18 @@ set $menu fuzzel
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/joseph/Pictures/bg/arch.jpg fill
-#
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+# TODO: Move output configs to external files to be called per-hostname
+output eDP-1 resolution 1920x1080 position 0 0 scale 1
+output eDP-2 resolution 1920x1080 position 1920 0 scale 1
+
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/joseph/Pictures/bg/arch.jpg fill
 
 ### Idle configuration
 #timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
@@ -48,6 +51,7 @@ exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 1800 'systemctl suspend' \
          before-sleep 'swaylock -f -c 000000' 
+
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -208,6 +212,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 bindsym $mod+r mode "resize"
 
 #
@@ -249,6 +254,9 @@ bar {
 #
 gaps inner 5
 gaps outer 5
+
+default_border pixel 3
+default_floating_border pixel 3
 
 # System tray applets
 #exec noctalia
