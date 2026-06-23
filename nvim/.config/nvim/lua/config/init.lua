@@ -1,3 +1,6 @@
-require("config.remap")
-require("config.lazy")
-require("config.set")
+require("config.options")
+require("config.keymaps")
+require("config.diagnostics")
+require("config.autocmds")
+require("util.autopairs").setup()
+
